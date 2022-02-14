@@ -1,0 +1,37 @@
+<div *ngIf="students">
+  <div class="heading">Students</div>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Student Name</th>
+      <th>Input Numerical Value</th>
+      <th>Input Unit Of Measure</th>
+      <th>Target Unit of Measure</th>
+      <th>Student Response</th>
+      <th>Output</th>
+    </tr>
+    <tr *ngFor="let item of studentTestData">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>
+        <input type="text" placeholder="Input Numerical Value" [(ngModel)]="item.inputValue">
+      </td>
+      <td>
+        <select name="Unit" [(ngModel)]="item.inputUnit">
+          <option *ngFor="let item of units" [value]="item.value">{{item.name}}</option>
+        </select>
+      </td>
+      <td>
+        <select name="Target Unit" [(ngModel)]="item.targetUnit">
+          <option *ngFor="let item of units" [value]="item.value">{{item.name}}</option>
+        </select>
+      </td>
+      <td>
+        <input type="text" placeholder="Student Response" [(ngModel)]="item.studentResp" (blur)="respData(item)">
+      </td>
+      <td>
+        {{item.output}}
+      </td>
+    </tr>
+  </table>
+</div>

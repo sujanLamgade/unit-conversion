@@ -1,0 +1,15 @@
+<div class="main-container">
+  <span class="heading">Unit Conversion</span>
+  <div class="tab">
+    <button class="tablinks" (click)="openTab(1)">Student</button>
+  </div>
+  <div class="tab">
+    <button class="tablinks" (click)="openTab(2)">Unit Conversion Test</button>
+  </div>
+  <div class="student tabcontent" [ngClass]="{'active': id === 1}" *ngIf="id===1">
+    <app-student></app-student>
+  </div>
+  <div class="tabcontent" [ngClass]="{'active': id === 2}" *ngIf="id === 2">
+    <app-unit-conversions></app-unit-conversions>
+  </div>
+</div>

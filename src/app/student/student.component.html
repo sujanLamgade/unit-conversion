@@ -1,0 +1,26 @@
+<div>
+  <div class="heading">Students</div>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+    </tr>
+    <tr *ngFor="let item of students">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+    </tr>
+    <tr *ngIf="student.id !== -1">
+      <td>{{student.id}}</td>
+      <td>
+        <input type="text" [(ngModel)]="student.name">
+        <button class="ml-2" type="submit" (click)="addNewStudent()">Add Student</button>
+      </td>
+    </tr>
+  </table>
+  <div class="pt-2">
+    <button (click)="createNewStudent()">Create New Student</button>
+  </div>
+  <!-- <div class="pt-2">
+    <button type="submit" (click)="uploadStudentData()">Upload Student Data to Server</button>
+  </div> -->
+</div>
